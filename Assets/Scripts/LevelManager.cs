@@ -6,6 +6,9 @@ public class LevelManager : MonoBehaviour {
 	public void LoadLevel(string name) {
 		Debug.Log ("Level log requested for: "+name);
 		Application.LoadLevel(name);
+		
+		if(name == "Loose")
+			Brick.breakableCount =0;
 	}
 	
 	public void QuitRequest() {
@@ -22,4 +25,5 @@ public class LevelManager : MonoBehaviour {
 			LoadNextLevel();
 		}
 	}
+
 }
